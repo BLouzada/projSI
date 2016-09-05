@@ -1,0 +1,15 @@
+#gifRoque{
+	display:none;
+}
+
+#gifEnPassant{
+	display:none;
+}
+
+.panel-images{
+	background-color: white;
+}
+.flex{
+	display: flex;
+	justify-content: center;	
+}
