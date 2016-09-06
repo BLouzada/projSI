@@ -4,11 +4,13 @@ module.exports = function(grunt) {
     grunt.initConfig({        
 		concat: {
 			css:{
-				src:'css/*.css',
+				src:['bower_components\foundation-sites\dist\foundation.css', 'css/**.css'],				
 				dest: 'app.css'				
 			},
 			js: {			
-					"src":  'bower_components/**/*.js',
+					"src": ['bower_components/jquery/dist/jquery.js',
+							'bower_components/foundation-sites/dist/foundation.js',
+							'bower_components/foundation-sites/js/**.js','bower_components/angular/angular.js'] ,
 					"dest": 'app.js'			
 			}
 		}
