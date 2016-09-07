@@ -4,13 +4,16 @@ module.exports = function(grunt) {
     grunt.initConfig({        
 		concat: {
 			css:{
-				src:['bower_components/foundation-sites/dist/foundation.css', 'assets/css/**.css'],				
+				src:['bower_components/foundation-apps/dist/css/foundation-apps.css',
+					 'bower_components/font-awesome/css/font-awesome.css'],				
 				dest: 'app.css'				
 			},
 			js: {			
-					"src": ['bower_components/jquery/dist/jquery.js',
-							'bower_components/foundation-sites/dist/foundation.js',
-							'bower_components/foundation-sites/js/**.js','bower_components/angular/angular.js',
+					"src": ['bower_components/jquery/dist/jquery.js',														
+							'bower_components/angular/angular.js',
+							'bower_components/angular-route/angular-route.js',
+							'bower_components/angular-ui-router/release/angular-ui-router.js',
+							'bower_components/foundation-apps/dist/js/foundation-apps.js',
 							'assets/js/**.js'] ,
 					"dest": 'app.js'			
 			}

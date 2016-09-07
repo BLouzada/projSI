@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,22 +9,33 @@
     <link rel="stylesheet" href="app.css">
     <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-app="DicasXadrez" class="full-background">
-  <div>
+  
+<body ng-app="DicasXadrez">
+  
+	<div class="menu-group primary">
+		<div class="menu-group-left">
+			<ul class="menu-bar primary">
+			<li><a href="#/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+			<li><a href="#">Contato</a></li>
+			<li><a href="#">Downloads</a></li>
+			</ul>
+		</div>
+		<div class="menu-group-right">
+			<ul class="icon-left primary menu-bar">
+			<li><a href="#">Item Aye</a></li>
+			<li><a href="#">Item Bee</a></li>
+			</ul>
+		</div>
+	</div>
+ 
 	<ul class="menu vertical">
-	  <li><a class="button" href="novato.html"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Regras básicas e como movimentar suas peças">Novatos</span></a></li>
+	  <li><a class="button" ui-sref="#novato"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Regras básicas e como movimentar suas peças">Novatos</span></a></li>
 	  <li><a class="button" href="iniciantes.html"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Sobre três fases de uma partida">Iniciantes</span></a></li>
 	  <li><a class="button" href="#">Jogadores</a></li>
 	  <li><a class="button" href="http://plainchess.timwoelfle.de/">Jogar!</a></li>	  
 	</ul>
-  </div>
+  
    
-   <script src="app.js"></script>     
-   
-   <script>
-	$(function() {
-	   $(document).foundation();
-	});
-</script>
+   <script src="app.js"></script>      
   </body>
 </html>
