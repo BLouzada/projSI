@@ -3,6 +3,8 @@ p {
 }
 .button{
 	border: 1px solid white;
+	background-color: transparent;
+	border-radius: 10px;
 }
 
 .menu li a{
