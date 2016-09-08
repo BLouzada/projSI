@@ -1,10 +1,14 @@
-angular.module('DicasXadrez', ['foundation','ngRoute'])	
-	.config(function($routeProvider) {
-		$routeProvider
-			.when("/", {
-				templateUrl : "index.html"
+angular.module('DicasXadrez', ['foundation','ui.router'])	
+	.config(function($stateProvider, $urlRouterProvider) {
+		
+		$stateProvider
+			.state('menu-principal', {
+				url: '/menu-principal',
+				templateUrl: 'assets/partials/menu-principal.html'
 			})
-			.when("/novato", {
-				templateUrl : "novato.html"
-			})
+			.state('novato', {
+				url: '/novato',
+				templateUrl: 'assets/partials/novato.html'
+			});
 	})
+	

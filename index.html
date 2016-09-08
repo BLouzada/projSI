@@ -15,7 +15,7 @@
 	<div class="menu-group primary">
 		<div class="menu-group-left">
 			<ul class="menu-bar primary">
-			<li><a href="#/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+			<li><a ui-sref="menu-principal"><i class="fa fa-home" aria-hidden="true">ola mundo</i></a></li>
 			<li><a href="#">Contato</a></li>
 			<li><a href="#">Downloads</a></li>
 			</ul>
@@ -27,15 +27,15 @@
 			</ul>
 		</div>
 	</div>
- 
-	<ul class="menu vertical">
-	  <li><a class="button" ui-sref="#novato"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Regras básicas e como movimentar suas peças">Novatos</span></a></li>
-	  <li><a class="button" href="iniciantes.html"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Sobre três fases de uma partida">Iniciantes</span></a></li>
-	  <li><a class="button" href="#">Jogadores</a></li>
-	  <li><a class="button" href="http://plainchess.timwoelfle.de/">Jogar!</a></li>	  
-	</ul>
+	<div class="container">
+
+    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+    <div ui-view></div>
+
+	</div> 
   
    
+   <script src="vendor.js"></script>   
    <script src="app.js"></script>      
   </body>
 </html>

@@ -10,13 +10,18 @@ module.exports = function(grunt) {
 			},
 			js: {			
 					"src": ['bower_components/jquery/dist/jquery.js',														
-							'bower_components/angular/angular.js',
-							'bower_components/angular-route/angular-route.js',
+							'bower_components/angular/angular.js',							
 							'bower_components/angular-ui-router/release/angular-ui-router.js',
-							'bower_components/foundation-apps/dist/js/foundation-apps.js',
-							'assets/js/**.js'] ,
-					"dest": 'app.js'			
-			}
+							'bower_components/foundation-apps/dist/js/foundation-apps.js'
+							] ,
+					"dest": 'vendor.js'			
+			},
+			app:{
+				src:['app.js',
+					 'assets/js/**.js'
+					 ],					 
+				dest: 'app.js'				
+			},
 		}
     });
 
@@ -25,5 +30,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Task definitions
-    grunt.registerTask('default', ['concat:css', 'concat:js']);
+    grunt.registerTask('default', ['concat:css', 'concat:js', 'concat:app']);
 };
