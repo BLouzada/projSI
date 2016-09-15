@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 			css:{
 				src:['bower_components/foundation-apps/dist/css/foundation-apps.css',
 					 'bower_components/font-awesome/css/font-awesome.css'],				
-				dest: 'app.css'				
+				dest: 'vendor.css'				
 			},
 			js: {			
 					"src": ['bower_components/jquery/dist/jquery.js',														
