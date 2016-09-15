@@ -1,14 +1,20 @@
-angular.module('DicasXadrez', ['foundation','ui.router'])	
+angular.module('DicasXadrez', ['foundation','ui.router'])
 	.config(function($stateProvider, $urlRouterProvider) {
-		
+
 		$stateProvider
-			.state('menu-principal', {
-				url: '/menu-principal',
-				templateUrl: 'assets/partials/menu-principal.html'
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html',
+				ncyBreadcrumb: {
+                        label: 'Menu Categorias'
+                }
 			})
-			.state('novato', {
-				url: '/novato',
-				templateUrl: 'assets/partials/novato.html'
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/novatos.html',
+				ncyBreadcrumb: {
+                        label: 'Novatos',
+                        parent: 'Menu Categorias'
+                    }
 			});
 	})
-	
