@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 		concat: {
 			css:{
 				src:['bower_components/foundation-apps/dist/css/foundation-apps.css',
-					 'bower_components/font-awesome/css/font-awesome.css'],				
+					 ],				
 				dest: 'vendor.css'				
 			},
 			js: {			
