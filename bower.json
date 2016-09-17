@@ -18,8 +18,7 @@
   "dependencies": {
     "jquery": "^3.1.0",
     "angular": "1.5.8",
-    "foundation-apps": "1.2.0",
-    "font-awesome": "^4.6.3",
+    "foundation-apps": "1.2.0",    
     "angular-route": "^1.5.8"
   },
   "resolutions": {
