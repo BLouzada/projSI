@@ -8,6 +8,6 @@ angular.module('DicasXadrez', ['foundation','ui.router'])
 			})
 			.state('novatos', {
 				url: '/novatos',
-				templateUrl: 'assets/partials/novatos.html'
+				templateUrl: 'assets/partials/sobre-xadrez.html'
 			});
 	})
