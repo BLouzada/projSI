@@ -33,5 +33,9 @@ angular.module('DicasXadrez', ['foundation','ui.router'])
 			.state('sobre-bispo', {
 				url: '/sobre-bispo',
 				templateUrl: 'assets/partials/sobre-bispo.html'
+			})
+			.state('sobre-exercicio', {
+				url: '/sobre-exercicio',
+				templateUrl: 'assets/partials/sobre-exercicio.html'
 			});
 	})

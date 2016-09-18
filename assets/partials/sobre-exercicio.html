@@ -1,0 +1,25 @@
+
+
+<div id="board1" style="width: 400px"></div>
+
+<script>
+var chess = new Chess();
+var onDrop = function(source, target, piece, newPos, oldPos, orientation) {
+  if(!chess.move({ from: source, to: target })){
+	return 'snapback'
+	};
+};
+
+var board1 = ChessBoard('board1', {
+  draggable: true,
+  dropOffBoard: 'trash',  
+   onDrop: onDrop,
+});
+
+board1.start();
+
+
+
+
+
+</script>
