@@ -21,8 +21,10 @@ grunt.initConfig({
 				dest: 'assets/vendor/vendor.js'			
 				},
 			app:{
-				src:['app.js',
-					 'assets/js/**.js'
+				src:['assets/js/app.js',
+					 'assets/js/ChessGameController.js',
+					 'assets/js/chessboard-0.3.0.js',
+					 
 					 ],					 
 				dest: 'app.js'				
 				},

@@ -36,6 +36,8 @@ angular.module('DicasXadrez', ['foundation','ui.router'])
 			})
 			.state('sobre-exercicio', {
 				url: '/sobre-exercicio',
-				templateUrl: 'assets/partials/sobre-exercicio.html'
+				templateUrl: 'assets/partials/sobre-exercicio.html',
+				controller: 'ChessGameController'
 			});
-	})
+	});
+
