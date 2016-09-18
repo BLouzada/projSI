@@ -85,3 +85,253 @@ angular.module('DicasXadrez', ['foundation','ui.router'])
 				templateUrl: 'assets/partials/sobre-xadrez.html'
 			});
 	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/resumo-novatos.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/resumo-novatos.html'
+			});
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/resumo-novatos.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			})
+			.state('sobre-rainha', {
+				url: '/sobre-rainha',
+				templateUrl: 'assets/partials/sobre-rainha.html'
+			});;
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			})
+			.state('sobre-rainha', {
+				url: '/sobre-rainha',
+				templateUrl: 'assets/partials/sobre-rainha.html'
+			})
+			.state('sobre-peao', {
+				url: '/sobre-peao',
+				templateUrl: 'assets/partials/sobre-peao.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			})
+			.state('sobre-rainha', {
+				url: '/sobre-rainha',
+				templateUrl: 'assets/partials/sobre-rainha.html'
+			})
+			.state('sobre-peao', {
+				url: '/sobre-peao',
+				templateUrl: 'assets/partials/sobre-peao.html'
+			})
+			.state('sobre-torre', {
+				url: '/sobre-torre',
+				templateUrl: 'assets/partials/sobre-torre.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			})
+			.state('sobre-rainha', {
+				url: '/sobre-rainha',
+				templateUrl: 'assets/partials/sobre-rainha.html'
+			})
+			.state('sobre-peao', {
+				url: '/sobre-peao',
+				templateUrl: 'assets/partials/sobre-peao.html'
+			})
+			.state('sobre-torre', {
+				url: '/sobre-torre',
+				templateUrl: 'assets/partials/sobre-torre.html'
+			})
+			.state('sobre-cavalo', {
+				url: '/sobre-cavalo',
+				templateUrl: 'assets/partials/sobre-cavalo.html'
+			});
+	})
+
+angular.module('DicasXadrez', ['foundation','ui.router'])
+	.config(function($stateProvider, $urlRouterProvider) {
+
+		$stateProvider
+			.state('menu-categorias', {
+				url: '/menu-categorias',
+				templateUrl: 'assets/partials/menu-categorias.html'
+			})
+			.state('sobre-xadrez', {
+				url: '/sobre-xadrez',
+				templateUrl: 'assets/partials/sobre-xadrez.html'
+			})
+			.state('sobre-rei', {
+				url: '/sobre-rei',
+				templateUrl: 'assets/partials/sobre-rei.html'
+			})
+			.state('sobre-rainha', {
+				url: '/sobre-rainha',
+				templateUrl: 'assets/partials/sobre-rainha.html'
+			})
+			.state('sobre-peao', {
+				url: '/sobre-peao',
+				templateUrl: 'assets/partials/sobre-peao.html'
+			})
+			.state('sobre-torre', {
+				url: '/sobre-torre',
+				templateUrl: 'assets/partials/sobre-torre.html'
+			})
+			.state('sobre-cavalo', {
+				url: '/sobre-cavalo',
+				templateUrl: 'assets/partials/sobre-cavalo.html'
+			})
+			.state('sobre-bispo', {
+				url: '/sobre-bispo',
+				templateUrl: 'assets/partials/sobre-bispo.html'
+			});
+	})
