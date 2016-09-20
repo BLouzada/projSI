@@ -1,5 +1,5 @@
 /*!
- * chessboard.j v0.3.0
+ * chessboard.js v0.3.0
  *
  * Copyright 2013 Chris Oakman
  * Released under the MIT license

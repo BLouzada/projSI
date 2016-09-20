@@ -9,9 +9,7 @@ $timeout(function () {
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
 var onDragStart = function(source, piece, position, orientation) {
-  if (game.game_over() === true ||
-      (game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+  if (game.game_over() === true ){
     return false;
   }
 };
@@ -25,7 +23,10 @@ var onDrop = function(source, target) {
   });
 
   // illegal move
-  if (move === null) return 'snapback';
+  if (move === null) {
+	console.log('joga direito idiota');
+	return 'snapback';	
+  }
 
   updateStatus();
 };

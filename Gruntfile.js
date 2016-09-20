@@ -8,7 +8,7 @@ grunt.initConfig({
 				src:['bower_components/foundation-apps/dist/css/foundation-apps.css',
 					 'assets/css/chessboard-0.3.0.css'],
 						
-				dest: 'assets/vendor/vendor.css'				
+				dest: 'vendor.css'				
 				},
 			js: {			
 				src: ['bower_components/jquery/dist/jquery.js',
@@ -18,13 +18,11 @@ grunt.initConfig({
 					  'assets/js/chessboard-0.3.0.js',
 					  'node_modules/chess.js/chess.js'
 					 ] ,
-				dest: 'assets/vendor/vendor.js'			
+				dest: 'vendor.js'			
 				},
 			app:{
-				src:['assets/js/app.js',
-					 'assets/js/ChessGameController.js',
-					 'assets/js/chessboard-0.3.0.js',
-					 
+				src:['assets/js/DicasXadrez.js',
+					 'assets/js/ChessGameController.js',				 
 					 ],					 
 				dest: 'app.js'				
 				},
