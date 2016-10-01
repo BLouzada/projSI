@@ -6,76 +6,103 @@ angular.module('DicasXadrez', ['foundation','ui.router'])
 				url: '/menu-categorias',
 				templateUrl: 'assets/partials/menu-categorias.html'
 			})
-			.state('sobre-xadrez', {
-				url: '/sobre-xadrez',
-				templateUrl: 'assets/partials/sobre-xadrez.html'
+			.state('novatos', {
+				url: '/novatos',
+				templateUrl: 'assets/partials/novatos/novatos.html'
 			})
-			.state('sobre-rei', {
-				url: '/sobre-rei',
-				templateUrl: 'assets/partials/sobre-rei.html'
+			.state('novatos.sobre', {
+				parent: 'novatos',
+				url: '/sobre',
+				templateUrl: 'assets/partials/novatos/xadrez.html'
 			})
-			.state('sobre-rainha', {
-				url: '/sobre-rainha',
-				templateUrl: 'assets/partials/sobre-rainha.html'
+			.state('novatos.rei', {
+				url:'/rei',
+				templateUrl: 'assets/partials/novatos/rei.html'
 			})
-			.state('sobre-peao', {
-				url: '/sobre-peao',
-				templateUrl: 'assets/partials/sobre-peao.html'
+			.state('novatos.rainha', {
+				url: '/rainha',
+				templateUrl: 'assets/partials/novatos/rainha.html'
 			})
-			.state('sobre-torre', {
-				url: '/sobre-torre',
-				templateUrl: 'assets/partials/sobre-torre.html'
+			.state('novatos.peao', {
+				url: '/peao',
+				templateUrl: 'assets/partials/novatos/peao.html'
 			})
-			.state('sobre-cavalo', {
-				url: '/sobre-cavalo',
-				templateUrl: 'assets/partials/sobre-cavalo.html'
+			.state('novatos.torre', {
+				url: '/torre',
+				templateUrl: 'assets/partials/novatos/torre.html'
 			})
-			.state('sobre-bispo', {
-				url: '/sobre-bispo',
-				templateUrl: 'assets/partials/sobre-bispo.html'
+			.state('novatos.cavalo', {
+				url: '/cavalo',
+				templateUrl: 'assets/partials/novatos/cavalo.html'
 			})
-			.state('sobre-exercicio', {
-				url: '/sobre-exercicio',
-				templateUrl: 'assets/partials/sobre-exercicio.html',
+			.state('novatos.bispo', {
+				url: '/bispo',
+				templateUrl: 'assets/partials/novatos/bispo.html'
+			})
+			.state('novatos.exercicio', {
+				url: '/exercicio',
+				templateUrl: 'assets/partials/novatos/exercicio.html',
 				controller: 'ChessGameController'
 			});
 	});
 
 
 angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$timeout", function($scope, $timeout){
+var greySquare = function(square) {
+  var squareEl = $('#board .square-' + square);
+
+  var background = '#a9a9a9';
+  if (squareEl.hasClass('black-3c85d') === true) {
+    background = '#696969';
+  }
+
+  squareEl.css('background', background);
+};
+
+var removeGreySquares = function() {
+  $('#board .square-55d63').css('background', '');
+};
+
 $timeout(function () {
 	var board,
-  game = new Chess(),
   statusEl = $('#status'),
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
+  game = new Chess();
 
-// do not pick up pieces if the game is over
-// only pick up pieces for the side to move
 var onDragStart = function(source, piece, position, orientation) {
+  removeGreySquares();
   if (game.game_over() === true ){
     return false;
   }
 };
-
-var onDrop = function(source, target) {
+var onDrop = function(source, target, draggedPiece) {
   // see if the move is legal
+  var moves = game.moves({
+    square: source,
+    verbose: true
+  });
+
   var move = game.move({
     from: source,
     to: target,
+    verbose: true,
     promotion: 'q' // NOTE: always promote to a queen for example simplicity
   });
 
   // illegal move
   if (move === null) {
-	console.log('joga direito idiota');
-	return 'snapback';	
+    for (var i = 0; i < moves.length; i++) {
+    greySquare(moves[i].to);
+  }
+
+	return 'snapback';
   }
 
   updateStatus();
 };
 
-// update the board position after the piece snap 
+// update the board position after the piece snap
 // for castling, en passant, pawn promotion
 var onSnapEnd = function() {
   board.position(game.fen());
@@ -122,6 +149,7 @@ var cfg = {
   onSnapEnd: onSnapEnd
 };
 board = ChessBoard('board', cfg);
+
 
 updateStatus();
 },1);
