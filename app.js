@@ -1,6 +1,5 @@
-angular.module('DicasXadrez', ['foundation','ui.router'])
+angular.module('DicasXadrez', ['ui.bootstrap','ui.router'])
 	.config(function($stateProvider, $urlRouterProvider) {
-
 		$stateProvider
 			.state('menu-categorias', {
 				url: '/menu-categorias',
@@ -49,7 +48,6 @@ $timeout(function () {
   statusEl = $('#status'),
   fenEl = $('#fen'),
   pgnEl = $('#pgn');
-
 // do not pick up pieces if the game is over
 // only pick up pieces for the side to move
 var onDragStart = function(source, piece, position, orientation) {
@@ -69,13 +67,13 @@ var onDrop = function(source, target) {
   // illegal move
   if (move === null) {
 	console.log('joga direito idiota');
-	return 'snapback';	
+	return 'snapback';
   }
 
   updateStatus();
 };
 
-// update the board position after the piece snap 
+// update the board position after the piece snap
 // for castling, en passant, pawn promotion
 var onSnapEnd = function() {
   board.position(game.fen());

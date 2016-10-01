@@ -1,4 +1,4 @@
-angular.module('DicasXadrez', ['foundation','ui.router'])
+angular.module('DicasXadrez', ['ui.bootstrap','ui.router'])
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
