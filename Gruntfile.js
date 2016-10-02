@@ -7,24 +7,27 @@ grunt.initConfig({
 			css:{
 				src:['bower_components/foundation-apps/dist/css/foundation-apps.css',
 					 'assets/css/chessboard-0.3.0.css'],
-						
-				dest: 'vendor.css'				
+
+				dest: 'vendor.css'
 				},
-			js: {			
+			js: {
 				src: ['bower_components/jquery/dist/jquery.js',
-					  'bower_components/angular/angular.js',							
+					  'bower_components/angular/angular.js',
 					  'bower_components/angular-ui-router/release/angular-ui-router.js',
+					  'bower_components/angular-animate/angular-animate.js',
 					  'bower_components/foundation-apps/dist/js/foundation-apps.js',
+					  'bower_components/foundation-apps/js/angular/servicesfoundation.dynamicRouting',
+						'bower_components/foundation-apps/js/angular/foundation.dynamicRouting.animations',
 					  'assets/js/chessboard-0.3.0.js',
 					  'node_modules/chess.js/chess.js'
 					 ] ,
-				dest: 'vendor.js'			
+				dest: 'vendor.js'
 				},
 			app:{
 				src:['assets/js/DicasXadrez.js',
-					 'assets/js/ChessGameController.js',				 
-					 ],					 
-				dest: 'app.js'				
+					 'assets/js/ChessGameController.js',
+					 ],
+				dest: 'app.js'
 				},
 			},
 	 watch: {
@@ -39,7 +42,7 @@ grunt.initConfig({
 		  files: ['assets/css/**.css'],
 		  tasks: ['concat:css'],
 		},
-		files: ['assets/partials/**','index.html'],
+		files: ['assets/partials/**/*.html','index.html'],
 	  },
 })
 ;}

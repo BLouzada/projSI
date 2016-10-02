@@ -1,4 +1,4 @@
-angular.module('DicasXadrez', ['foundation','ui.router'])
+angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.dynamicRouting','foundation.dynamicRouting.animations'])
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
