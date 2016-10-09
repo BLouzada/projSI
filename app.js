@@ -39,9 +39,9 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 				url: '/bispo',
 				templateUrl: 'assets/partials/novatos/bispo.html'
 			})
-			.state('novatos.exercicio', {
-				url: '/exercicio',
-				templateUrl: 'assets/partials/novatos/exercicio.html',
+			.state('novatos.treino', {
+				url: '/treino',
+				templateUrl: 'assets/partials/novatos/treino.html',
 				controller: 'ChessGameController'
 			});
 	});
