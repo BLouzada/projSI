@@ -13,6 +13,15 @@
 	</div>
 
 	<div class="grid-block">
-		<img ng-src="assets/img/pieces/wPmove.png" alt="Movimentos peões" title="Possíveis movimentos com os peões">
+		<img ng-src="assets/img/pieces/wPmove.png" alt="Movimentos torres" title="Possíveis movimentos com as torres">
 	</div>
 </div>
+<div zf-if="not small">
+	<zf-offcanvas id="menu" position="bottom" class="detached">
+		<menu-novatos></menu-novatos>
+	</zf-offcanvas>
+</div>
+<div zf-if="small only">
+	<menu-novatos></menu-novatos>
+</div>
+

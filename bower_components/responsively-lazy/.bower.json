@@ -1,0 +1,37 @@
+{
+  "name": "responsively-lazy",
+  "description": "Lazy load responsive images",
+  "homepage": "http://ivopetkov.com/b/lazy-load-responsive-images/",
+  "authors": [
+    {
+      "name": "Ivo Petkov",
+      "email": "ivo@ivopetkov.com",
+      "homepage": "http://ivopetkov.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ivopetkov/responsively-lazy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ivopetkov/responsively-lazy/issues"
+  },
+  "keywords": [
+    "images",
+    "lazyload",
+    "responsive",
+    "seo"
+  ],
+  "license": "MIT",
+  "version": "2.0.0",
+  "_release": "2.0.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.0",
+    "commit": "f037d6bc0d6d6dfa1f61b31be04330391739b71e"
+  },
+  "_source": "https://github.com/ivopetkov/responsively-lazy.git",
+  "_target": "^2.0.0",
+  "_originalSource": "responsively-lazy",
+  "_direct": true
+}

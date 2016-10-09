@@ -18,8 +18,9 @@
   "dependencies": {
     "jquery": "^3.1.0",
     "angular": "1.5.8",
-    "foundation-apps": "1.2.0",    
-    "angular-route": "^1.5.8"
+    "foundation-apps": "1.2.0",
+    "angular-route": "^1.5.8",
+    "responsively-lazy": "^2.0.0"
   },
   "resolutions": {
     "angular": "^1.0.8"

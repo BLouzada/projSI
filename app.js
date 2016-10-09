@@ -164,3 +164,9 @@ angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$tim
   },1);
 }]);
 
+
+angular.module('DicasXadrez').directive('menuNovatos', function () {
+    return {
+        templateUrl: '/assets/partials/novatos/menu-novatos.html'
+    };
+});

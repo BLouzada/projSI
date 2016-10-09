@@ -16,8 +16,9 @@ grunt.initConfig({
 					  'bower_components/angular-ui-router/release/angular-ui-router.js',
 					  'bower_components/angular-animate/angular-animate.js',
 					  'bower_components/foundation-apps/dist/js/foundation-apps.js',
-					  'bower_components/foundation-apps/js/angular/servicesfoundation.dynamicRouting',
-						'bower_components/foundation-apps/js/angular/foundation.dynamicRouting.animations',
+					  'bower_components/foundation-apps/dist/js/foundation-apps-templates.js',
+					  'bower_components/foundation-apps/js/angular/components/offcanvas/offcanvas.js',
+					  'bower_components/foundation-apps/js/angular/components/interchange/interchange.js',
 					  'assets/js/chessboard-0.3.0.js',
 					  'node_modules/chess.js/chess.js'
 					 ] ,
@@ -26,6 +27,7 @@ grunt.initConfig({
 			app:{
 				src:['assets/js/DicasXadrez.js',
 					 'assets/js/ChessGameController.js',
+					 'assets/js/MenuNovatosDirective.js',
 					 ],
 				dest: 'app.js'
 				},

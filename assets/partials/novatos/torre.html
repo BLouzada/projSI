@@ -12,6 +12,14 @@
 		<p>No final do jogo as torres facilitam bastante o xeque-mate por atacarem uma grande quantidade de casas.</p>
 	</div>
 	<div class="grid-block">
-		<img ng-src="assets/img/pieces/wRmove.png" alt="Movimentos torres" title="Possíveis movimentos com as torres">
+			<img ng-src="assets/img/pieces/wRmove.png" alt="Movimentos torres" title="Possíveis movimentos com as torres">
 	</div>
+</div>
+<div zf-if="not small">
+	<zf-offcanvas id="menu" position="bottom" class="detached">
+		<menu-novatos></menu-novatos>
+	</zf-offcanvas>
+</div>
+<div zf-if="small only">
+	<menu-novatos></menu-novatos>
 </div>

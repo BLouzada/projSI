@@ -54067,6 +54067,542 @@ angular.module('markdown', [])
 
 })();
 
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/accordion/accordion-item.html',
+    '<div class="accordion-item" ng-class="{\'is-active\': active}">\n' +
+    '  <div class="accordion-title" ng-click="activate()">{{ title }}</div>\n' +
+    '  <div class="accordion-content" ng-transclude></div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/accordion/accordion.html',
+    '<div class="accordion" ng-transclude>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/actionsheet/actionsheet-button.html',
+    '<div>\n' +
+    '  <a href="#"\n' +
+    '    class="button"\n' +
+    '    ng-if="title.length > 0">{{ title }}</a>\n' +
+    '  <div ng-transclude></div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/actionsheet/actionsheet-content.html',
+    '<div\n' +
+    '  class="action-sheet {{ position }}"\n' +
+    '  ng-class="{\'is-active\': active}"\n' +
+    '  >\n' +
+    '    <div\n' +
+    '    ng-transclude>\n' +
+    '    </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/actionsheet/actionsheet.html',
+    '<div class="action-sheet-container"\n' +
+    '  ng-transclude>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/modal/modal.html',
+    '<div\n' +
+    '  class="modal-overlay"\n' +
+    '  ng-click="hideOverlay()">\n' +
+    '  <aside\n' +
+    '    class="modal"\n' +
+    '    ng-click="$event.stopPropagation();"\n' +
+    '    ng-transclude>\n' +
+    '  </aside>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/notification/notification-set.html',
+    '<div class="notification-container {{position}}">\n' +
+    '  <zf-notification ng-repeat="notification in notifications"\n' +
+    '    title="notification.title"\n' +
+    '    image="notification.image"\n' +
+    '    notif-id = "notification.id"\n' +
+    '    color="notification.color"\n' +
+    '    autoclose="notification.autoclose"\n' +
+    '    >{{ notification.content }}</zf-notification>\n' +
+    '</div>');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/notification/notification-static.html',
+    '<div zf-swipe-close="swipe" class="static-notification {{ color }} {{ position }}">\n' +
+    '  <a href="#"\n' +
+    '    class="close-button"\n' +
+    '    ng-click="hide(); $event.preventDefault(); $event.stopPropagation()">&times;</a>\n' +
+    '  <div class="notification-icon" ng-if="image">\n' +
+    '    <img ng-src="{{ image }}"/>\n' +
+    '  </div>\n' +
+    '  <div class="notification-content">\n' +
+    '    <h1 ng-bind-html="trustedTitle"></h1>\n' +
+    '    <p ng-transclude></p>\n' +
+    '  </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/notification/notification.html',
+    '<div zf-swipe-close="swipe" class="notification {{ color }}">\n' +
+    '  <a href="#"\n' +
+    '    class="close-button"\n' +
+    '    ng-click="hide(); $event.preventDefault(); $event.stopPropagation()">&times;</a>\n' +
+    '  <div class="notification-icon" ng-if="image">\n' +
+    '    <img ng-src="{{ image }}"/>\n' +
+    '  </div>\n' +
+    '  <div class="notification-content">\n' +
+    '    <h1 ng-bind-html="trustedTitle"></h1>\n' +
+    '    <p ng-transclude></p>\n' +
+    '  </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/offcanvas/offcanvas.html',
+    '<div\n' +
+    '  class="off-canvas {{ position }}"\n' +
+    '  ng-class="{\'is-active\': active}"\n' +
+    '  ng-transclude>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/panel/panel.html',
+    '<div\n' +
+    '  class="panel"\n' +
+    '  ng-class="positionClass"\n' +
+    '  ng-transclude\n' +
+    '  >\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/popup/popup.html',
+    '<div class="popup" ng-class="{\'is-active\': active }" ng-transclude>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/tabs/tab-content.html',
+    '<div class="tab-contents">\n' +
+    '  <div zf-tab-individual\n' +
+    '    class="tab-content"\n' +
+    '    ng-class="{\'is-active\': tab.active}"\n' +
+    '    ng-repeat="tab in tabs"\n' +
+    '    tab="tab">\n' +
+    '  </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/tabs/tab.html',
+    '<div class="tab-item"\n' +
+    '  ng-class="{\'is-active\': active}"\n' +
+    '  ng-click="makeActive()">{{ title }}</div>\n' +
+    '');
+}]);
+
+angular.module('foundation').run(['$templateCache', function($templateCache) {
+  $templateCache.put('components/tabs/tabs.html',
+    '<div>\n' +
+    '  <div class="tabs" ng-transclude>\n' +
+    '  </div>\n' +
+    '  <div zf-tab-content\n' +
+    '    target="{{ id }}"\n' +
+    '    ng-if="showTabContent">\n' +
+    '  </div>\n' +
+    '</div>\n' +
+    '');
+}]);
+
+(function() {
+  'use strict';
+
+  angular.module('foundation.offcanvas', ['foundation.core'])
+    .directive('zfOffcanvas', zfOffcanvas)
+    .service('FoundationOffcanvas', FoundationOffcanvas)
+  ;
+
+  FoundationOffcanvas.$inject = ['FoundationApi'];
+
+  function FoundationOffcanvas(foundationApi) {
+    var service    = {};
+
+    service.activate = activate;
+    service.deactivate = deactivate;
+
+    return service;
+
+    //target should be element ID
+    function activate(target) {
+      foundationApi.publish(target, 'show');
+    }
+
+    //target should be element ID
+    function deactivate(target) {
+      foundationApi.publish(target, 'hide');
+    }
+
+    function toggle(target) {
+      foundationApi.publish(target, 'toggle');
+    }
+  }
+
+  zfOffcanvas.$inject = ['FoundationApi'];
+
+  function zfOffcanvas(foundationApi) {
+    var directive = {
+      restrict: 'EA',
+      templateUrl: 'components/offcanvas/offcanvas.html',
+      transclude: true,
+      scope: {
+        position: '@'
+      },
+      replace: true,
+      compile: compile
+    };
+
+    return directive;
+
+    function compile(tElement, tAttrs, transclude) {
+      var type = 'offcanvas';
+
+      return {
+        pre: preLink,
+        post: postLink
+      };
+
+      function preLink(scope, iElement, iAttrs, controller) {
+        iAttrs.$set('zf-closable', type);
+        document.body.classList.add('has-off-canvas');
+      }
+
+      function postLink(scope, element, attrs) {
+        scope.position = scope.position || 'left';
+
+        scope.active = false;
+        //setup
+        foundationApi.subscribe(attrs.id, function(msg) {
+          if(msg === 'show' || msg === 'open') {
+            scope.show();
+          } else if (msg === 'close' || msg === 'hide') {
+            scope.hide();
+          } else if (msg === 'toggle') {
+            scope.toggle();
+          }
+
+          if (!scope.$root.$$phase) {
+            scope.$apply();
+          }
+
+          return;
+        });
+
+        scope.hide = function() {
+          scope.active = false;
+          return;
+        };
+
+        scope.show = function() {
+          scope.active = true;
+          return;
+        };
+
+        scope.toggle = function() {
+          scope.active = !scope.active;
+          return;
+        };
+      }
+    }
+  }
+
+})();
+
+(function() {
+  'use strict';
+
+  angular.module('foundation.interchange', ['foundation.core', 'foundation.mediaquery'])
+    .directive('zfInterchange', zfInterchange)
+  ;
+
+  zfInterchange.$inject = [ '$compile', '$http', '$templateCache', 'FoundationApi', 'FoundationMQ'];
+
+  function zfInterchange($compile, $http, $templateCache, foundationApi, foundationMQ) {
+
+    var directive = {
+      restrict: 'EA',
+      transclude: 'element',
+      scope: {
+        position: '@'
+      },
+      replace: true,
+      template: '<div></div>',
+      link: link
+    };
+
+    return directive;
+
+    function link(scope, element, attrs, ctrl, transclude) {
+      var childScope, current, scenarios, innerTemplates;
+
+      var globalQueries = foundationMQ.getMediaQueries();
+
+      //setup
+      foundationApi.subscribe('resize', function(msg) {
+        transclude(function(clone, newScope) {
+          if(!scenarios || !innerTemplates) {
+            collectInformation(clone);
+          }
+
+          var ruleMatches = foundationMQ.match(scenarios);
+          var scenario = ruleMatches.length === 0 ? null : scenarios[ruleMatches[0].ind];
+
+          //this could use some love
+          if(scenario && checkScenario(scenario)) {
+            var compiled;
+
+            if(childScope) {
+              childScope.$destroy();
+              childScope = null;
+            }
+
+            if(typeof scenario.templ !== 'undefined') {
+              childScope = newScope;
+
+              //temp container
+              var tmp = document.createElement('div');
+              tmp.appendChild(innerTemplates[scenario.templ][0]);
+
+              element.html(tmp.innerHTML);
+              $compile(element.contents())(childScope);
+              current = scenario;
+            } else {
+              var loader = templateLoader(scenario.src);
+              loader.success(function(html) {
+                childScope = newScope;
+                element.html(html);
+              }).then(function(){
+                $compile(element.contents())(childScope);
+                current = scenario;
+              });
+            }
+          }
+        });
+
+      });
+
+      //init
+      foundationApi.publish('resize', 'initial resize');
+
+      function templateLoader(templateUrl) {
+        return $http.get(templateUrl, {cache: $templateCache});
+      }
+
+      function collectInformation(el) {
+        var data = foundationMQ.collectScenariosFromElement(el);
+
+        scenarios = data.scenarios;
+        innerTemplates = data.templates;
+      }
+
+      function checkScenario(scenario) {
+        return !current || current !== scenario;
+      }
+    }
+  }
+
+  angular.module('foundation.interchange')
+  /*
+   * Final directive to perform media queries, other directives set up this one
+   * (See: http://stackoverflow.com/questions/19224028/add-directives-from-directive-in-angularjs)
+   */
+    .directive('zfQuery', zfQuery)
+  /*
+   * zf-if / zf-show / zf-hide
+   */
+    .directive('zfIf', zfQueryDirective('ng-if', 'zf-if'))
+    .directive('zfShow', zfQueryDirective('ng-show', 'zf-show'))
+    .directive('zfHide', zfQueryDirective('ng-hide', 'zf-hide'))
+  ;
+
+  /*
+   * This directive will configure ng-if/ng-show/ng-hide and zf-query directives and then recompile the element
+   */
+  function zfQueryDirective(angularDirective, directiveName) {
+    return ['$compile', 'FoundationApi', function ($compile, foundationApi) {
+      // create unique scope property for media query result, must be unique to avoid collision with other zf-query directives
+      // property set upon element compilation or else all similar directives (i.e. zf-if-*/zf-show-*/zf-hide-*) will get the same value
+      var queryResult;
+
+      return {
+        priority: 1000, // must compile directive before any others
+        terminal: true, // don't compile any other directive after this
+                        // we'll fix this with a recompile
+        restrict: 'A',
+        compile: compile
+      };
+
+      // From here onward, scope[queryResult] refers to the result of running the provided query
+      function compile(element, attrs) {
+        var previousParam;
+
+        // set unique property
+        queryResult = (directiveName + foundationApi.generateUuid()).replace(/-/g,'');
+
+        // set default configuration
+        element.attr('zf-query-not', false);
+        element.attr('zf-query-only', false);
+        element.attr('zf-query-or-smaller', false);
+        element.attr('zf-query-scope-prop', queryResult);
+
+        // parse directive attribute for query parameters
+        element.attr(directiveName).split(' ').forEach(function(param) {
+          if (param) {
+            // add zf-query directive and configuration attributes
+            switch (param) {
+              case "not":
+                element.attr('zf-query-not', true);
+                element.attr('zf-query-only', true);
+                break;
+              case "only":
+                element.attr('zf-query-only', true);
+                break;
+              case "or":
+                break;
+              case "smaller":
+                // allow usage of smaller keyword if preceeded by 'or' keyword
+                if (previousParam === "or") {
+                  element.attr('zf-query-or-smaller', true);
+                }
+                break;
+              default:
+                element.attr('zf-query', param);
+                break;
+            }
+
+            previousParam = param;
+          }
+        });
+
+        // add/update angular directive
+        if (!element.attr(angularDirective)) {
+          element.attr(angularDirective, queryResult);
+        } else {
+          element.attr(angularDirective, queryResult + ' && (' + element.attr(angularDirective) + ')');
+        }
+
+        // remove directive from current element to avoid infinite recompile
+        element.removeAttr(directiveName);
+        element.removeAttr('data-' + directiveName);
+
+        return {
+          pre: function (scope, element, attrs) {
+          },
+          post: function (scope, element, attrs) {
+            // recompile
+            $compile(element)(scope);
+          }
+        };
+      }
+    }];
+  }
+
+  zfQuery.$inject = ['FoundationApi', 'FoundationMQ'];
+  function zfQuery(foundationApi, foundationMQ) {
+    return {
+      priority: 601, // must compile before ng-if (600)
+      restrict: 'A',
+      compile: function compile(element, attrs) {
+        return compileWrapper(attrs['zfQueryScopeProp'],
+                              attrs['zfQuery'],
+                              attrs['zfQueryOnly'] === "true",
+                              attrs['zfQueryNot'] === "true",
+                              attrs['zfQueryOrSmaller'] === "true");
+      }
+    };
+
+    // parameters will be populated with values provided from zf-query-* attributes
+    function compileWrapper(queryResult, namedQuery, queryOnly, queryNot, queryOrSmaller) {
+      // set defaults
+      queryOnly = queryOnly || false;
+      queryNot = queryNot || false;
+
+      return {
+        pre: preLink,
+        post: postLink
+      };
+
+      // From here onward, scope[queryResult] refers to the result of running the provided query
+      function preLink(scope, element, attrs) {
+        // initially set media query result to false
+        scope[queryResult] = false;
+      }
+
+      function postLink(scope, element, attrs) {
+        // subscribe for resize events
+        foundationApi.subscribe('resize', function() {
+          var orignalVisibilty = scope[queryResult];
+          runQuery();
+          if (orignalVisibilty != scope[queryResult]) {
+            // digest if visibility changed
+            scope.$digest();
+          }
+        });
+
+        scope.$on("$destroy", function() {
+          foundationApi.unsubscribe('resize');
+        });
+
+        // run first media query check
+        runQuery();
+
+        function runQuery() {
+          if (!queryOnly) {
+            if (!queryOrSmaller) {
+              // Check if matches media or LARGER
+              scope[queryResult] = foundationMQ.matchesMedia(namedQuery);
+            } else {
+              // Check if matches media or SMALLER
+              scope[queryResult] = foundationMQ.matchesMediaOrSmaller(namedQuery);
+            }
+          } else {
+            if (!queryNot) {
+              // Check that media ONLY matches named query and nothing else
+              scope[queryResult] = foundationMQ.matchesMediaOnly(namedQuery);
+            } else {
+              // Check that media does NOT match named query
+              scope[queryResult] = !foundationMQ.matchesMediaOnly(namedQuery);
+            }
+          }
+        }
+      }
+    }
+  }
+})();
+
 /*!
  * chessboard.js v0.3.0
  *

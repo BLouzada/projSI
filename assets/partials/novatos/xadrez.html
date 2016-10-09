@@ -18,8 +18,19 @@
 		<p>O tabuleiro é organizado como na figura ao lado, observar a casa mais a direita do jogador sempre será da cor branca.</p>
 	</div>
 	<div class="grid-block">
-	<div class="grid-content">
-		<img ng-src="assets/img/pieces/initialboard.png" alt="Organização do tabuleiro" title="Organização do tabuleiro">
+		<div class="grid-block">
+			<img ng-src="assets/img/pieces/initialboard.png" alt="Movimentos torres" title="Possíveis movimentos com as torres">
 	</div>
 	</div>
 </div>
+<div zf-if="not small">
+	<zf-offcanvas id="menu" position="bottom" class="detached">
+		<menu-novatos></menu-novatos>
+	</zf-offcanvas>
+</div>
+<div zf-if="small only">
+	<menu-novatos></menu-novatos>
+</div>
+
+
+
