@@ -28,6 +28,7 @@ grunt.initConfig({
 				src:['assets/js/DicasXadrez.js',
 					 'assets/js/ChessGameController.js',
 					 'assets/js/MenuNovatosDirective.js',
+					 'assets/js/TreinoXadrezDirective.js',
 					 ],
 				dest: 'app.js'
 				},

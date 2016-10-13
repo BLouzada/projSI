@@ -41,8 +41,7 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 			})
 			.state('novatos.treino', {
 				url: '/treino',
-				templateUrl: 'assets/partials/novatos/treino.html',
-				controller: 'ChessGameController'
+				templateUrl: 'assets/partials/novatos/treino.html'
 			});
 	});
 

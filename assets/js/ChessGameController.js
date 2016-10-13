@@ -1,9 +1,7 @@
 angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$timeout", function($scope, $timeout){
-    /*
-  statusEl = $('#status'),
-  fenEl = $('#fen'),
-  pgnEl = $('#pgn');
-  */
+
+  statusEl = $('#gameStatus');
+
   var board,
   game = new Chess();
 
@@ -28,28 +26,28 @@ angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$tim
   };
 
   var onDrop = function(source, target, draggedPiece) {
-  // see if the move is legal
-  var moves = game.moves({
-    square: source,
-    verbose: true
-  });
+    var move = game.move({
+      from: source,
+      to: target,
+      verbose: true,
+      promotion: 'q'
+    });
 
-  var move = game.move({
-    from: source,
-    to: target,
-    verbose: true,
-    promotion: 'q' // NOTE: always promote to a queen for example simplicity
-  });
+    var moves = game.moves({
+      square: source,
+      verbose: true
+    });
 
-  // illegal move
-  if (move === null) {
-    for (var i = 0; i < moves.length; i++) {
-      greySquare(moves[i].to);
+    if (move === null) {
+      for (var i = 0; i < moves.length; i++) {
+        greySquare(moves[i].to);
+      }
+      return 'snapback';
     }
-    return 'snapback';
-  }
-  window.setTimeout(makeRandomMove, 250);
-  updateStatus();
+    updateStatus();
+    $timeout(function () {
+      makeRandomMove();
+    },1000);
   };
 
   var onSnapEnd = function() {
@@ -59,53 +57,47 @@ angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$tim
   var updateStatus = function() {
     var status = '';
 
-    var moveColor = 'White';
+    var moveColor = 'Brancas';
     if (game.turn() === 'b') {
-      moveColor = 'Black';
+      moveColor = 'Pretas';
     }
 
-    // checkmate?
     if (game.in_checkmate() === true) {
-      status = 'Game over, ' + moveColor + ' is in checkmate.';
+      status = 'Fim de jogo, ' + moveColor + ' esta em check-mate.';
     }
 
-    // draw?
     else if (game.in_draw() === true) {
-      status = 'Game over, drawn position';
+      status = 'Fim de jogo, posição de empate';
     }
 
-    // game still on
     else {
-      status = moveColor + ' to move';
+      status = moveColor + ' a jogar';
 
-      // check?
       if (game.in_check() === true) {
-        status += ', ' + moveColor + ' is in check';
+        status += ', ' + moveColor + ' esta em check';
       }
     }
 
-    /*statusEl.html(status);
-    fenEl.html(game.fen());
-    pgnEl.html(game.pgn());
-    */
+    statusEl.html(status);
   };
+
   var makeRandomMove = function() {
     var possibleMoves = game.moves();
 
-    // game over
     if (possibleMoves.length === 0) return;
 
     var randomIndex = Math.floor(Math.random() * possibleMoves.length);
     game.move(possibleMoves[randomIndex]);
     board.position(game.fen());
+    updateStatus();
   };
-
 
   var cfg = {
     draggable: true,
     position: 'start',
     onDragStart: onDragStart,
     onDrop: onDrop,
+    moveSpeed: 'slow',
     onSnapEnd: onSnapEnd
   };
 
