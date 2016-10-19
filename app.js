@@ -2,10 +2,6 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
-			.state('/', {
-				url: '/',
-				templateUrl: 'index.html'
-			})
 			.state('menu-categorias', {
 				url: '/menu-categorias',
 				templateUrl: 'assets/partials/menu-categorias.html'
@@ -17,7 +13,7 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 			.state('novatos.sobre', {
 				parent: 'novatos',
 				url: '/sobre',
-				templateUrl: 'assets/partials/novatos/xadrez.html'
+				templateUrl: 'assets/partials/novatos/sobre-xadrez.html'
 			})
 			.state('novatos.rei', {
 				parent: 'novatos',
@@ -56,11 +52,6 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 			})
 			.state('iniciantes', {
 				url: '/iniciantes',
-				templateUrl: 'assets/partials/iniciantes/iniciantes.html'
-			})
-			.state('iniciantes.sobre', {
-				parent: 'iniciantes',
-				url: '/sobre',
 				templateUrl: 'assets/partials/iniciantes/iniciantes.html'
 			});
 	});
@@ -176,6 +167,25 @@ angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$tim
 }]);
 
 
+angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$timeout", function($scope, $timeout){
+
+  $scope.olaMundo = function (){
+    board.move('e2-e4');
+  }
+
+  var board;
+
+  var cfg = {
+    position: 'clear',
+    moveSpeed: 'slow'
+  };
+
+  $timeout(function () {
+    board = ChessBoard('board', cfg);
+  },1);
+}]);
+
+
 angular.module('DicasXadrez').directive('menuNovatos', function () {
     return {
         templateUrl: 'assets/partials/novatos/menu-novatos.html'
@@ -187,6 +197,19 @@ angular.module('DicasXadrez').directive('treinoXadrez', function () {
       restrict: 'E',
       template: '<span id="gameStatus" class="label"></span>\
                 <div id="board" style="width: 400px"></div>',
-      controller: 'ChessGameController',
+      controller: 'ChessDrawController',
+    };
+});
+
+angular.module('DicasXadrez').directive('empateXadrez', function () {
+    return {
+      restrict: 'E',
+      template: '<ul class="button-group small">\
+                    <li><button ng-click="olaMundo()">Button X</button></li>\
+                    <li><a href="#">Button Y</a></li>\
+                    <li><a href="#">Button Z</a></li>\
+                </ul>\
+                <div id="board" style="width: 400px"></div>',
+      controller: 'ChessDrawController',
     };
 });

@@ -2,10 +2,6 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider
-			.state('/', {
-				url: '/',
-				templateUrl: 'index.html'
-			})
 			.state('menu-categorias', {
 				url: '/menu-categorias',
 				templateUrl: 'assets/partials/menu-categorias.html'
@@ -17,7 +13,7 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 			.state('novatos.sobre', {
 				parent: 'novatos',
 				url: '/sobre',
-				templateUrl: 'assets/partials/novatos/xadrez.html'
+				templateUrl: 'assets/partials/novatos/sobre-xadrez.html'
 			})
 			.state('novatos.rei', {
 				parent: 'novatos',
@@ -56,11 +52,6 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 			})
 			.state('iniciantes', {
 				url: '/iniciantes',
-				templateUrl: 'assets/partials/iniciantes/iniciantes.html'
-			})
-			.state('iniciantes.sobre', {
-				parent: 'iniciantes',
-				url: '/sobre',
 				templateUrl: 'assets/partials/iniciantes/iniciantes.html'
 			});
 	});
