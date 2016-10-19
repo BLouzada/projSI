@@ -1,4 +1,4 @@
-<div zf-if="small only" class="align-bottom">
+<div zf-if="not xxlarge" class="align-bottom">
     <div class="vertical medium-horizontal grid-block">
       <div class="grid-block align-justify small-12 medium-12 columns">
         <button><a ui-sref="novatos.sobre"><img ng-src="assets/img/pieces/chessboard-icon.png"></a></button>
@@ -12,7 +12,7 @@
       </div>
     </div>
 </div>
-<zf-offcanvas zf-if="not small" id="menu" position="bottom" class="detached">
+<zf-offcanvas zf-if="xxlarge only" id="menu" position="bottom" class="detached">
     <div class="align-bottom">
         <div class="vertical medium-horizontal grid-block">
           <div class="grid-block align-justify small-12 medium-12 columns">
