@@ -168,10 +168,40 @@ angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$tim
 
 
 angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$timeout", function($scope, $timeout){
+  statusEl = $('#gameStatus');
 
-  $scope.olaMundo = function (){
-    board.move('e2-e4');
-  }
+  $scope.demoReiAfogado = function (){
+    board.position('7k/5K2/8/6Q1/8/8/8/8');
+    board.move('g5-g6');
+    statusEl.html('fim de jogo posição de empate');
+  };
+
+  $scope.demoXequePerpetuo = function (){
+    board.position('6k1/6p1/8/6KQ/1r6/q2b4/8/8');
+
+     $timeout(function () {
+        statusEl.html('Brancas a jogar');
+        board.move('h5-e8');
+      },1000);
+
+     $timeout(function () {
+      statusEl.html('Pretas a jogar');
+      board.move('g8-h7');
+      },2000);
+
+     $timeout(function () {
+        statusEl.html('Brancas a jogar');
+        board.move('e8-h5');
+      },3000);
+
+     $timeout(function () {
+        statusEl.html('Pretas a jogar');
+        board.move('h7-g8');
+      },4000);
+     $timeout(function () {
+        statusEl.html('fim de jogo posição de empate');
+     },5000);
+  };
 
   var board;
 
@@ -205,10 +235,11 @@ angular.module('DicasXadrez').directive('empateXadrez', function () {
     return {
       restrict: 'E',
       template: '<ul class="button-group small">\
-                    <li><button ng-click="olaMundo()">Button X</button></li>\
-                    <li><a href="#">Button Y</a></li>\
+                    <li><button ng-click="demoReiAfogado()">Rei Afogado</button></li>\
+                    <li><button ng-click="demoXequePerpetuo()">Xeque Perpetuo</button></li>\
                     <li><a href="#">Button Z</a></li>\
-                </ul>\
+                </ul></br>\
+                <span id="gameStatus" class="label"></span>\
                 <div id="board" style="width: 400px"></div>',
       controller: 'ChessDrawController',
     };
