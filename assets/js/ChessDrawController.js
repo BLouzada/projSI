@@ -1,10 +1,13 @@
 angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$timeout", function($scope, $timeout){
   statusEl = $('#gameStatus');
+  statusEl.html('Demonstração das situações de empate.');
 
   $scope.demoReiAfogado = function (){
     board.position('7k/5K2/8/6Q1/8/8/8/8');
-    board.move('g5-g6');
-    statusEl.html('fim de jogo posição de empate');
+    $timeout(function () {
+        board.move('g5-g6');
+        statusEl.html('fim de jogo posição de empate');
+      },1000);
   };
 
   $scope.demoXequePerpetuo = function (){
@@ -29,9 +32,20 @@ angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$tim
         statusEl.html('Pretas a jogar');
         board.move('h7-g8');
       },4000);
+
+     $timeout(function () {
+        statusEl.html('Brancas a jogar');
+        board.move('h5-e8');
+      },5000);
+
+     $timeout(function () {
+      statusEl.html('Pretas a jogar');
+      board.move('g8-h7');
+      },6000);
+
      $timeout(function () {
         statusEl.html('fim de jogo posição de empate');
-     },5000);
+     },7000);
   };
 
   var board;
