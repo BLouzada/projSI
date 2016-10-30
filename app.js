@@ -64,6 +64,21 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 				parent: 'iniciantes',
 				url: '/jogadas-avancadas',
 				templateUrl: 'assets/partials/iniciantes/jogadas-avancadas.html'
+			})
+			.state('iniciantes.fases', {
+				parent: 'iniciantes',
+				url: '/fases',
+				templateUrl: 'assets/partials/iniciantes/fases.html'
+			})
+			.state('taticas', {
+				abstract: true,
+				url: '/taticas',
+				template: '<ui-view/>'
+			})
+			.state('taticas.sobre', {
+				parent: 'taticas',
+				url: '/sobre',
+				templateUrl: 'assets/partials/taticas/sobre.html'
 			});
 	});
 
@@ -327,6 +342,63 @@ angular.module('DicasXadrez').controller('ChessAdvancedController', ['$scope', "
 }]);
 
 
+angular.module('DicasXadrez').controller('ChessTaticsController', ['$scope', "$timeout","$element", function($scope, $timeout,$element){
+  statusEl = $('#gameStatus');
+  statusEl.html('Demonstração das táticas básicas.');
+  var i = 0;
+
+  var greySquare = function(square) {
+    var squareEl = $('#board .square-' + square);
+    var background = '#a9a9a9';
+      if (squareEl.hasClass('black-3c85d') === true) {
+        background = '#696969';
+      }
+    squareEl.css('background', background);
+  };
+
+  var removeGreySquares = function() {
+    $('#board .square-55d63').css('background', '');
+  };
+
+  $scope.demoGarfos = function (){
+    removeGreySquares();
+    statusEl.html('Pretas a jogar.');
+    board.position('r1bqkb1r/ppp2Npp/2np1n2/4p3/2B1P3/8/PPPP1PPP/RNBQK2R');
+    greySquare('d8');
+    greySquare('h8');
+    greySquare('d5');
+    greySquare('e6');
+    greySquare('f7');
+  };
+
+  $scope.demoPregadura = function (){
+    removeGreySquares();
+    statusEl.html('Pretas a jogar.');
+    board.position('r2qkbnr/ppp1pppp/2np4/1B6/4P1b1/5N2/PPPP1PPP/RNBQK2R');
+    greySquare('c6');
+    greySquare('d7');
+    greySquare('e8');
+  };
+  $scope.demoEspetos = function (){
+    removeGreySquares();
+    statusEl.html('Pretas a jogar.');
+    board.position('1Q2k2r/6pp/8/2q5/8/7P/6P1/7K');
+    greySquare('e8');
+    greySquare('h8');
+  };
+
+  var board;
+  var cfg = {
+    position: 'clear',
+    moveSpeed: 'slow'
+  };
+  $timeout(function () {
+    board = ChessBoard('board', cfg);
+  },1);
+
+}]);
+
+
 angular.module('DicasXadrez').directive('menuNovatos', function () {
     return {
         templateUrl: 'assets/partials/novatos/menu-novatos.html'
@@ -365,5 +437,19 @@ angular.module('DicasXadrez').directive('jogadasAvancadasXadrez', function () {
                 <span id="gameStatus" class="label"></span>\
                 <div id="board" style="width: 464px"></div>',
       controller: 'ChessAdvancedController',
+    };
+});
+
+angular.module('DicasXadrez').directive('taticasXadrez', function () {
+    return {
+      restrict: 'E',
+      template: '<ul class="button-group small">\
+                    <li><button ng-click="demoGarfos()">Garfos</button></li>\
+                    <li><button ng-click="demoPregadura()">Pregaduras</button></li>\
+                    <li><button ng-click="demoEspetos()">Espetos</button></li>\
+                </ul></br>\
+                <span id="gameStatus" class="label"></span>\
+                <div id="board" style="width: 464px"></div>',
+      controller: 'ChessTaticsController',
     };
 });

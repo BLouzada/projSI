@@ -64,6 +64,21 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 				parent: 'iniciantes',
 				url: '/jogadas-avancadas',
 				templateUrl: 'assets/partials/iniciantes/jogadas-avancadas.html'
+			})
+			.state('iniciantes.fases', {
+				parent: 'iniciantes',
+				url: '/fases',
+				templateUrl: 'assets/partials/iniciantes/fases.html'
+			})
+			.state('taticas', {
+				abstract: true,
+				url: '/taticas',
+				template: '<ui-view/>'
+			})
+			.state('taticas.sobre', {
+				parent: 'taticas',
+				url: '/sobre',
+				templateUrl: 'assets/partials/taticas/sobre.html'
 			});
 	});
 
