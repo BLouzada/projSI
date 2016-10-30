@@ -1,13 +1,14 @@
 angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$timeout", function($scope, $timeout){
   statusEl = $('#gameStatus');
   statusEl.html('Demonstração das situações de empate.');
+  var i = 0;
 
   $scope.demoReiAfogado = function (){
     board.position('7k/5K2/8/6Q1/8/8/8/8');
     $timeout(function () {
         board.move('g5-g6');
-        statusEl.html('fim de jogo posição de empate');
-      },1000);
+        statusEl.html('Fim de jogo posição de empate');
+      },i+=1000);
   };
 
   $scope.demoXequePerpetuo = function (){
@@ -16,36 +17,36 @@ angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$tim
      $timeout(function () {
         statusEl.html('Brancas a jogar');
         board.move('h5-e8');
-      },1000);
+      },i+=1000);
 
      $timeout(function () {
       statusEl.html('Pretas a jogar');
       board.move('g8-h7');
-      },2000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('Brancas a jogar');
         board.move('e8-h5');
-      },3000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('Pretas a jogar');
         board.move('h7-g8');
-      },4000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('Brancas a jogar');
         board.move('h5-e8');
-      },5000);
+      },i+=1000);
 
      $timeout(function () {
       statusEl.html('Pretas a jogar');
       board.move('g8-h7');
-      },6000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('fim de jogo posição de empate');
-     },7000);
+     },i+=1000);
   };
 
   var board;

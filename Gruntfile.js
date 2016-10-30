@@ -28,9 +28,11 @@ grunt.initConfig({
 				src:['assets/js/DicasXadrez.js',
 					 'assets/js/ChessGameController.js',
 					 'assets/js/ChessDrawController.js',
+					 'assets/js/ChessAdvancedController.js',
 					 'assets/js/MenuNovatosDirective.js',
 					 'assets/js/TreinoXadrezDirective.js',
-					 'assets/js/EmpateXadrezDirective.js'
+					 'assets/js/EmpateXadrezDirective.js',
+					 'assets/js/JogadasAvancadasXadrezDirective.js'
 					 ],
 				dest: 'app.js'
 				},

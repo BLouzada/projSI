@@ -6,7 +6,7 @@ angular.module('DicasXadrez').directive('empateXadrez', function () {
                     <li><button ng-click="demoXequePerpetuo()">Xeque Perpetuo</button></li>\
                 </ul></br>\
                 <span id="gameStatus" class="label"></span>\
-                <div id="board" style="width: 400px"></div>',
+                <div id="board" style="width: 464px"></div>',
       controller: 'ChessDrawController',
     };
 });

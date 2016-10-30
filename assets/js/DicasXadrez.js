@@ -51,8 +51,19 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 				templateUrl: 'assets/partials/novatos/treino.html'
 			})
 			.state('iniciantes', {
+				abstract: true,
 				url: '/iniciantes',
-				templateUrl: 'assets/partials/iniciantes/iniciantes.html'
+				template: '<ui-view/>'
+			})
+			.state('iniciantes.empates', {
+				parent: 'iniciantes',
+				url: '/empates',
+				templateUrl: 'assets/partials/iniciantes/empates.html'
+			})
+			.state('iniciantes.jogadas-avancadas', {
+				parent: 'iniciantes',
+				url: '/jogadas-avancadas',
+				templateUrl: 'assets/partials/iniciantes/jogadas-avancadas.html'
 			});
 	});
 

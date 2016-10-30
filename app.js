@@ -51,8 +51,19 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 				templateUrl: 'assets/partials/novatos/treino.html'
 			})
 			.state('iniciantes', {
+				abstract: true,
 				url: '/iniciantes',
-				templateUrl: 'assets/partials/iniciantes/iniciantes.html'
+				template: '<ui-view/>'
+			})
+			.state('iniciantes.empates', {
+				parent: 'iniciantes',
+				url: '/empates',
+				templateUrl: 'assets/partials/iniciantes/empates.html'
+			})
+			.state('iniciantes.jogadas-avancadas', {
+				parent: 'iniciantes',
+				url: '/jogadas-avancadas',
+				templateUrl: 'assets/partials/iniciantes/jogadas-avancadas.html'
 			});
 	});
 
@@ -170,13 +181,14 @@ angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$tim
 angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$timeout", function($scope, $timeout){
   statusEl = $('#gameStatus');
   statusEl.html('Demonstração das situações de empate.');
+  var i = 0;
 
   $scope.demoReiAfogado = function (){
     board.position('7k/5K2/8/6Q1/8/8/8/8');
     $timeout(function () {
         board.move('g5-g6');
-        statusEl.html('fim de jogo posição de empate');
-      },1000);
+        statusEl.html('Fim de jogo posição de empate');
+      },i+=1000);
   };
 
   $scope.demoXequePerpetuo = function (){
@@ -185,36 +197,36 @@ angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$tim
      $timeout(function () {
         statusEl.html('Brancas a jogar');
         board.move('h5-e8');
-      },1000);
+      },i+=1000);
 
      $timeout(function () {
       statusEl.html('Pretas a jogar');
       board.move('g8-h7');
-      },2000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('Brancas a jogar');
         board.move('e8-h5');
-      },3000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('Pretas a jogar');
         board.move('h7-g8');
-      },4000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('Brancas a jogar');
         board.move('h5-e8');
-      },5000);
+      },i+=1000);
 
      $timeout(function () {
       statusEl.html('Pretas a jogar');
       board.move('g8-h7');
-      },6000);
+      },i+=1000);
 
      $timeout(function () {
         statusEl.html('fim de jogo posição de empate');
-     },7000);
+     },i+=1000);
   };
 
   var board;
@@ -227,6 +239,91 @@ angular.module('DicasXadrez').controller('ChessDrawController', ['$scope', "$tim
   $timeout(function () {
     board = ChessBoard('board', cfg);
   },1);
+}]);
+
+
+angular.module('DicasXadrez').controller('ChessAdvancedController', ['$scope', "$timeout", function($scope, $timeout){
+
+  var board;
+  var cfg = {
+    position: 'clear',
+    moveSpeed: 'slow'
+  };
+
+  $timeout(function () {
+    board = ChessBoard('board', cfg);
+  },1);
+
+  statusEl = $('#gameStatus');
+  statusEl.html('Demonstração das jogadas avançadas.');
+
+  $scope.demoRoque = function (){
+    var i = 0;
+    statusEl.html('Demonstração roque.');
+    board.start();
+    $timeout(function () {
+        board.move('e2-e4');
+      },i+=1000);
+    $timeout(function () {
+        board.move('g7-g6');
+      },i+=1000);
+    $timeout(function () {
+        board.move('d2-d4');
+      },i+=1000);
+    $timeout(function () {
+        board.move('d2-d4');
+      },i+=1000);
+    $timeout(function () {
+        board.move('f8-g7');
+      },i+=1000);
+    $timeout(function () {
+        board.move('c1-e3');
+      },i+=1000);
+    $timeout(function () {
+        board.move('g8-h6');
+      },i+=1000);
+    $timeout(function () {
+        board.move('b1-c3');
+      },i+=1000);
+    $timeout(function () {
+        board.move('d7-d6');
+      },i+=1000);
+    $timeout(function () {
+        board.move('d1-d2');
+      },i+=1000);
+    $timeout(function () {
+        board.move('e8-h8');
+        board.position('rnbqr2k/ppp1ppbp/3p2pn/8/3PP3/2N1B3/PPPQ1PPP/R3KBNR',false);
+      },i+=1000);
+     $timeout(function () {
+        board.move('e1-a1');
+        board.position('rnbqr2k/ppp1ppbp/3p2pn/8/3PP3/2N1B3/PPPQ1PPP/K3RBNR',false);
+      },i+=1000);
+  };
+
+  $scope.demoEnPassant = function (){
+    var i = 0;
+    board.start();
+
+     $timeout(function () {
+        board.move('e2-e4');
+      },i+=1000);
+     $timeout(function () {
+        board.move('a7-a6');
+      },i+=1000);
+     $timeout(function () {
+        board.move('e4-e5');
+      },i+=1000);
+     $timeout(function () {
+        board.move('d7-d5');
+      },i+=1000);
+     $timeout(function () {
+        board.move('e5-d6');
+        board.position('rnbqkbnr/1pp1pppp/p2P4/8/8/8/PPPP1PPP/RNBQKBNR',false);
+      },i+=1000);
+  };
+
+
 }]);
 
 
@@ -253,7 +350,20 @@ angular.module('DicasXadrez').directive('empateXadrez', function () {
                     <li><button ng-click="demoXequePerpetuo()">Xeque Perpetuo</button></li>\
                 </ul></br>\
                 <span id="gameStatus" class="label"></span>\
-                <div id="board" style="width: 400px"></div>',
+                <div id="board" style="width: 464px"></div>',
       controller: 'ChessDrawController',
+    };
+});
+
+angular.module('DicasXadrez').directive('jogadasAvancadasXadrez', function () {
+    return {
+      restrict: 'E',
+      template: '<ul class="button-group small">\
+                    <li><button ng-click="demoRoque()">Roque</button></li>\
+                    <li><button ng-click="demoEnPassant()">Captura en passant</button></li>\
+                </ul></br>\
+                <span id="gameStatus" class="label"></span>\
+                <div id="board" style="width: 464px"></div>',
+      controller: 'ChessAdvancedController',
     };
 });
