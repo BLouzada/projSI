@@ -6,7 +6,8 @@ grunt.initConfig({
 	concat: {
 			css:{
 				src:['bower_components/foundation-apps/dist/css/foundation-apps.css',
-					 'assets/css/chessboard-0.3.0.css'],
+					 'assets/css/chessboard-0.3.0.css',
+					 'assets/css/menu-categorias-container.css'],
 
 				dest: 'vendor.css'
 				},

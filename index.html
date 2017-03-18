@@ -14,20 +14,19 @@
   		<div class="menu-group-left">
   			<ul class="menu-bar primary">
   			<li><a ui-sref="menu-categorias"><i class="fa fa-home" aria-hidden="true"></i></a></li>
-  			<li><a href="#">Contato</a></li>
-  			<li><a href="#">Downloads</a></li>
+        <li><a zf-open="contatoModal" class="button">Contato</a></li>
   			</ul>
   		</div>
   	</div>
   	<div class="container">
       <div ui-view>
-          <div class="grid-block align-center">
+          <div class="menu-categorias-container grid-block align-center">
             <div class="grid-container">
               <ul class="menu vertical central no-bullet">
                 <li><a class="button" ui-sref="novatos.sobre"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Regras básicas e como movimentar suas peças">Básico</span></a></li>
                 <li><a class="button" ui-sref="iniciantes.empates"><span data-tooltip aria-haspopup="true" class="has-tip" data-options="show_on:large" title="Sobre três fases de uma partida">Regras</span></a></li>
                 <li><a class="button" ui-sref="taticas.sobre">Táticas</a></li>
-                <li><a class="button" href="http://plainchess.timwoelfle.de/">Jogar!</a></li>
+                <li><a target="_blank" class="button" href="http://plainchess.timwoelfle.de/">Jogar!</a></li>
               </ul>
             </div>
           </div>
@@ -36,5 +35,12 @@
     <script src="vendor.js"></script>
     <script src="app.js"></script>
     <script src="http://localhost:35729/livereload.js"></script>
+    <div ng-cloak class="tiny" zf-modal="" id="contatoModal">
+        <a zf-close="" class="close-button">×</a>
+        <div>Bruno Louzada</div><small>blgoes@gmail.com</small>
+        <br/>
+        <a target="_blank" href="https://github.com/BLouzada/projSI"><button>source</button></a>
+    </div>
   </body>
 </html>
+
