@@ -65,10 +65,20 @@ angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.
 				url: '/jogadas-avancadas',
 				templateUrl: 'assets/partials/iniciantes/jogadas-avancadas.html'
 			})
-			.state('iniciantes.fases', {
+			.state('iniciantes.abertura', {
 				parent: 'iniciantes',
-				url: '/fases',
-				templateUrl: 'assets/partials/iniciantes/fases.html'
+				url: '/abertura',
+				templateUrl: 'assets/partials/iniciantes/abertura.html'
+			})
+			.state('iniciantes.meio-partida', {
+				parent: 'iniciantes',
+				url: '/meio-partida',
+				templateUrl: 'assets/partials/iniciantes/meio-partida.html'
+			})
+			.state('iniciantes.fim-partida', {
+				parent: 'iniciantes',
+				url: '/fim-partida',
+				templateUrl: 'assets/partials/iniciantes/fim-partida.html'
 			})
 			.state('taticas', {
 				abstract: true,
