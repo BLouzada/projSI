@@ -1,4 +1,5 @@
 angular.module('DicasXadrez', ['foundation','ui.router','ngAnimate','foundation.dynamicRouting','foundation.dynamicRouting.animations'])
+	.value('game', game = new Chess())
 	.config(function($stateProvider, $urlRouterProvider) {
 
 		$stateProvider

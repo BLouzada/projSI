@@ -1,10 +1,9 @@
-angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$timeout", function($scope, $timeout){
+angular.module('DicasXadrez').controller('ChessGameController', ['$scope', "$timeout", "game", function($scope, $timeout, game){
 
   statusEl = $('#gameStatus');
 
-  var board,
-  game = new Chess();
-
+  var board;
+  var game = game;
   var greySquare = function(square) {
     var squareEl = $('#board .square-' + square);
     var background = '#a9a9a9';

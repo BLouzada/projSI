@@ -6352,3 +6352,6 @@ blockquote, blockquote p {
 .menu li a span{
     font-size: x-large;
 }
+body {
+  background-color: rgb(250,250,250) !important
+}
